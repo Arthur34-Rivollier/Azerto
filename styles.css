@@ -1,0 +1,75 @@
+/* Corps de la page avec fond galaxie */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background: black;
+    color: white;
+}
+
+/* Container pour la scène 3D */
+#scene-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+/* Login Form */
+#login-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    text-align: center;
+    z-index: 2;
+}
+
+.hidden {
+    display: none;
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background: #111;
+    color: white;
+    outline: none;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(145deg, #00aaff, #555555);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+}
+
+/* Fermer le formulaire */
+#login-container button:last-of-type {
+    background: #ff5555;
+    margin-top: 10px;
+}
