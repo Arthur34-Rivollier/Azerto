@@ -82,7 +82,7 @@ function handleLogin() {
     const password = document.getElementById('password').value;
 
     // Ici, tu peux ajouter des vérifications pour les identifiants
-    if (username === 'arthur.rivollier' && password === '986529') {
+    if (username === 'test' && password === '1234') {
         // Connexion réussie
         document.getElementById('login-container').style.display = 'none';  // Cache l'écran de connexion
         document.getElementById('scene-container').style.display = 'block'; // Affiche la scène 3D
