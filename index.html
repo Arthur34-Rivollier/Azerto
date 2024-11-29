@@ -19,6 +19,19 @@
             <button onclick="closeLogin()">Fermer</button>
         </div>
     </div>
+    <div class="input-group">
+        <input type="text" id="username" required>
+        <label for="">Username</label>
+    </div>
+    <div class="input-group">
+        <input type="password" id="password" required>
+        <label for="">Password</label>
+    </div>
+    <div>
+        <button class="rounded-button"onclick="checkLogin()">Login</button>
+        <p id="error-message" class="error"></p>
+
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

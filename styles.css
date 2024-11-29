@@ -1,3 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    background: #01003f;
+}
+
+.input-group {
+    position: relative;
+    margin: 20px 0;
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #0ef;
+    padding: 0 5px;
+    pointer-events: none;
+    transition: .3s;
+}
+
+.input-group input {
+    width: 360px;
+    height: 60px;
+    font-size: 16px;
+    color: #fff;
+    padding: 0 15px;
+    background: transparent;
+    border: 1.2px solid #0ef;
+    outline: none;
+    border-radius: 5px;
+}
+
+.input-group input:focus~label,
+.input-group input:valid~label {
+    top: 0;
+    font-size: 14px;
+    background: #01003f;
+}
+
+.rounded-button {
+    background-color: #87CEFA; /* Bleu clair */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 20px; /* Bords arrondis */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.rounded-button:hover {
+    background-color: #4682B4; /* Bleu un peu plus foncé au survol */
+    transform: scale(1.05); /* Légère mise en avant */
+}
+
+.rounded-button:active {
+    transform: scale(0.95); /* Légère réduction lors du clic */
+}
+
+
+
+.login-container {
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.rounded-button {
+    background-color: #87CEFA;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.rounded-button:hover {
+    background-color: #4682B4;
+    transform: scale(1.05);
+}
+
+.rounded-button:active {
+    transform: scale(1.25);
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
 /* Corps de la page avec fond galaxie */
 body {
     margin: 0;
