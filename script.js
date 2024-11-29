@@ -1,8 +1,9 @@
 let scene, camera, renderer, earth, moon;
 
+// Fonction d'initialisation de la scène
 function init() {
     const container = document.getElementById('scene-container');
-
+    
     // Initialisation de la scène
     scene = new THREE.Scene();
 
@@ -25,12 +26,8 @@ function init() {
 
     // Texture Terre
     const earthTexture = new THREE.TextureLoader().load(
-        'earth.jpg',
-        () => { console.log('Texture Terre chargée.'); },
-        undefined,
-        (error) => { console.error('Erreur lors du chargement de la texture de la Terre :', error); }
+        'earth.jpg'
     );
-
     const earthGeometry = new THREE.SphereGeometry(1.5, 32, 32);
     const earthMaterial = new THREE.MeshStandardMaterial({ map: earthTexture });
     earth = new THREE.Mesh(earthGeometry, earthMaterial);
@@ -38,12 +35,8 @@ function init() {
 
     // Texture Lune
     const moonTexture = new THREE.TextureLoader().load(
-        'mars.jpg',
-        () => { console.log('Texture Lune chargée.'); },
-        undefined,
-        (error) => { console.error('Erreur lors du chargement de la texture de la Lune :', error); }
+        'mars.jpg'
     );
-
     const moonGeometry = new THREE.SphereGeometry(0.5, 32, 32);
     const moonMaterial = new THREE.MeshStandardMaterial({ map: moonTexture });
     moon = new THREE.Mesh(moonGeometry, moonMaterial);
@@ -71,7 +64,7 @@ function animate() {
     requestAnimationFrame(animate);
 
     // Rotation de la Terre et de la Lune
-    earth.rotation.y += 0.005;
+    earth.rotation.y += 0.0025;
     moon.rotation.y += 0.005;
 
     renderer.render(scene, camera);
@@ -83,9 +76,22 @@ function onWindowResize() {
     renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
-function closeLogin() {
-    document.getElementById('login-container').classList.add('hidden');
+// Fonction de gestion de la connexion
+function handleLogin() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Ici, tu peux ajouter des vérifications pour les identifiants
+    if (username === 'arthur.rivollier' && password === '986529') {
+        // Connexion réussie
+        document.getElementById('login-container').style.display = 'none';  // Cache l'écran de connexion
+        document.getElementById('scene-container').style.display = 'block'; // Affiche la scène 3D
+        init();  // Initialiser la scène
+    } else {
+        // Affiche un message d'erreur si les identifiants sont incorrects
+        document.getElementById('error-message').textContent = 'Nom d\'utilisateur ou mot de passe incorrect';
+    }
 }
 
-// Démarrage de la scène
-init();
+// Initialiser la page sans afficher la scène 3D
+document.getElementById('scene-container').classList.add('hidden');
